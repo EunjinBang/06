@@ -3,21 +3,27 @@
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-int sumTwo();
+int get_max();
 
 int main(int argc, char *argv[]) {
 	
-	int x; 
-	int result;
-	printf("제곱하고 싶은 수를 입력하시오:");
-	scanf("%d", &x);
-	result = square(x);
-	printf("%d", result);
+	int a;
+	int b; 
+	int maxValue;
+	printf("큰 수를 계산할 두 수를 입력하시오:");
+	scanf("%d %d", &a, &b);
+	maxValue = get_max(a, b);
+	printf("%d", maxValue);
 	
 	return 0;
 }
 
-int square(int n)
+int get_max(int x, int y)
 {
-	return (n * n);
+	int output;
+	if (x > y)
+		output = x;
+	else
+		output = y;
+	return output;
 }
